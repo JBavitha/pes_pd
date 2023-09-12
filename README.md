@@ -32,3 +32,9 @@ This Application Software enters into a block called as System Software and this
 </details>
 
 </details>
+
+<details>
+<summary> SoC design and OpenLANE </summary> 
+
+
+</details>
