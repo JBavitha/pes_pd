@@ -30,11 +30,24 @@ This Application Software enters into a block called as System Software and this
 - Multiply Extension(RV64M)
 - Single and Double precision floating point Extension(RV64F and RV64D)
 </details>
-
 </details>
+
+
 
 <details>
 <summary> SoC design and OpenLANE </summary> 
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/b2b20b8b-6564-46d5-8c02-9fc30d3f2fae)
+
+
+
+
+
+
+
+
+
+
 
 
 </details>
