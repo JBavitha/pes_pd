@@ -1,5 +1,5 @@
 # pes_pd
-
+<details>
 <summary> RISC-V(Reduced Instruction Set Computing-Five) </summary>
 
 - Open Standard: RISC-V is an open standard ISA, which means that its specifications are freely available to the public. This openness encourages collaboration, innovation, and the development of a wide range of processors by various organizations and individuals.
