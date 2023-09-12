@@ -38,3 +38,19 @@ This Application Software enters into a block called as System Software and this
 
 
 </details>
+
+
+
+
+
+
+
+
+
+
+<details>
+<summary> Get familiar to open-source EDA tools </summary> 
+
+
+
+</details>
