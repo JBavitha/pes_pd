@@ -79,10 +79,43 @@ This Application Software enters into a block called as System Software and this
 - Timing Verification
   - Static Timing Analysis (STA)
 
+## Introduction to OpenLANE 
+```Open-Source ASIC Design:``` OpenLane is designed to democratize the ASIC design process by providing open-source tools and methodologies. It aims to reduce the barriers to entry and enable more people to design custom integrated circuits.
+
+
+- Main Goal:
+  - Produce a clean GDSII with no human intervention (no-human-in-the-loop)
+
+- Clean means:
+  - No LVS Violations
+  - No DRC Violations
 
 
 
+### StriVe SoC Family
 
+<img width="246" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/2cc4a4ae-1d0f-43a7-a281-f53cd835f9e0">
+
+### OpenLANE ASIC Flow
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/d8db7b57-d549-4f66-af91-795a2df28fc2)
+
+### Design For Test (DFT)
+
+- Scan Insertion
+- Automatic Test Pattern Generation (ATPG)
+- Test Patterns Compaction
+- Fault Coverage
+- Fault Simulation
+
+### Physical implementation 
+- Also called automated PnR (Place and Route)
+  - Floor/Power Planning
+  - End Decoupling Capacitors and Tap cells insertion
+  - Placement: Global and Detailed
+  - Post placement optimization
+  - Clock Tree Synthesis (CTS)
+  - Routing: Global and Detailed
 
 
 
