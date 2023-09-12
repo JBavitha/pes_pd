@@ -60,6 +60,38 @@ This Application Software enters into a block called as System Software and this
 - Detailed placement follows global placement and focuses on refining the positions of individual cells to achieve precise spatial coordinates.
 - It determines the exact locations of each cell and ensures that cells are placed according to design constraints and the logical interconnections between them.
 
+```Clock Tree Synthesis (CTS) :```CTS aims to efficiently distribute clock signals to all flip-flops and sequential elements in the design. This ensures that all clocked elements receive a synchronized clock signal, minimizing clock skew (the variation in arrival times of clock signals) and ensuring consistent operation.
+
+```Signal Routing :```It involves the process of connecting various electronic components and interconnecting the signal paths to ensure proper functionality.
+
+1. Global Routing:
+- Global routing focuses on finding a rough path for each signal through the available routing channels to connect the source and destination points.
+- It doesn't specify the exact path of each wire but rather defines high-level routing structures.
+
+2. Detailed Routing:
+- Detailed routing follows global routing and focuses on refining the exact paths of each signal.
+- It specifies the specific routing resources (metal layers, vias, etc.) to be used for each net and resolves conflicts.
+
+```Sign Off :```
+- Physical Verifications
+  - Design Rules Checking (DRC)
+  - Layout vs. Schematic (LVS)
+- Timing Verification
+  - Static Timing Analysis (STA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
