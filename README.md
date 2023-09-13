@@ -117,9 +117,22 @@ This Application Software enters into a block called as System Software and this
   - Clock Tree Synthesis (CTS)
   - Routing: Global and Detailed
 
+### Logic Equivalence Check
 
+- Every time the netlist is modified, verification must be performed
+  - CTS modifies the netlist
+  - Post Placement optimizations modifies the netlist
+- LEC is used to formally confirm that the function did not change after modifying the netlist
 
-
+### Dealing with Antenna rules Violations
+- When a metal wire segment is fabricated, it can act as an antenna.
+  - Reactive ion etching causes charge to accumulate on the wire.
+  - Transistor gates can be damaged during fabrication.
+** Two solutions : **
+- Bridging attaches a higher layer intermediary
+  - Requires Router awareness (not there yet!)
+- Add antenna diode cell to leak away charges
+  - Antenna diodes are provided by the SCL
 
 
 
