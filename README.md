@@ -159,31 +159,59 @@ This Application Software enters into a block called as System Software and this
 
 ### Design preparation steps
 
+
 <img width="342" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7753c73b-e9c1-4006-8a43-1480eca4107d">
+
+
+
+
 
 <img width="381" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/99a8d4ab-33ba-4bda-bc7e-d54c4f40b92a">
 
+
+
 <img width="573" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/4d7c6351-6a7b-4b71-9f64-76f8b88012bc">
+
+
 
 ``` less config.tcl ```
 
+
 <img width="511" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/da96657a-8ed4-4df2-90de-76f6490a6c74">
 
+``` less sky130A_sky130_fd_sc_hd_config.tcl ```
+
+<img width="322" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/1b383da5-b9b3-4075-825d-b9f0c61d8c5e">
+
+**Design setup stage**
+
+<img width="601" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/64294755-5b46-4b77-8d84-0a9aed67bf8a">
+
+### Review files after design prep and run synthesis
+
+<img width="522" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/c4dfe649-c06a-427b-8dc8-dfa1018c6503">
 
 
+``` less merged.lef ```
+
+<img width="430" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/43a7480d-6ccd-4742-8c3d-df4e7914ce96">
+
+``` less config.tcl ```
+
+<img width="605" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/422c65b3-b2bd-41aa-987e-fcd3c6ce497e">
+
+**Synthesis results**
+
+<img width="173" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/4688d9eb-88f6-429e-b01a-ce15b8299151">
+
+``` No of cells =```14876
+``` No of dff = ``` 1613
+``` flop ratio=``` 0.108
 
 
+``` less picorv32a.synthesis.v```
 
-
-
-
-
-
-
-
-
-
-
+<img width="601" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/4de900cb-ecf8-4431-b775-78921198feac">
 
 
 
