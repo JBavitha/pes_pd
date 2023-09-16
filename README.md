@@ -134,20 +134,7 @@ This Application Software enters into a block called as System Software and this
 - Add antenna diode cell to leak away charges
   - Antenna diodes are provided by the SCL
 
-
-
-
-
-
-
-
-
 </details>
-
-
-
-
-
 
 
 
@@ -155,6 +142,51 @@ This Application Software enters into a block called as System Software and this
 
 <details>
 <summary> Get familiar to open-source EDA tools </summary> 
+  
+### OpenLANE directory structure in detail 
+
+<img width="416" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/264589dd-a16d-43ba-a23b-0df5ac663015">
+
+<img width="482" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/0a6630d8-6ea6-4ab1-9c62-b90278e4568e">
+
+<img width="518" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/b95fc4be-0d02-4770-89d4-014e63c3bcc8">
+
+- skywate-pdk : contains all pdk related files.
+- open_pdks : set of scrips and files that converts foundry level pdks to be compatible with open source pda tools.
+- sky130A : It is a variant of pdk.
+- libs.tech : specific to technology
+- libs.ref : specific to tools
+
+### Design preparation steps
+
+<img width="342" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7753c73b-e9c1-4006-8a43-1480eca4107d">
+
+<img width="381" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/99a8d4ab-33ba-4bda-bc7e-d54c4f40b92a">
+
+<img width="573" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/4d7c6351-6a7b-4b71-9f64-76f8b88012bc">
+
+``` less config.tcl ```
+
+<img width="511" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/da96657a-8ed4-4df2-90de-76f6490a6c74">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
