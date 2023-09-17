@@ -326,6 +326,31 @@ This Application Software enters into a block called as System Software and this
 
 <img width="471" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/08172ee4-f587-43b3-aa68-f303b8875487">
 
+- Clock 1 and clock 2 drive the complete chip.
+
+**Pin Placement**
+<img width="520" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/16360952-d320-4093-a941-8530898cf0d4">
+
+- After Pin placement we make sure that none of the automated placement and routine tool doesnt place any cells in the particular area that the gaps between each clock ports,the area should be blocked for placement and routine tool,hence we do logical cell placement blockage.
+<img width="508" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/e5af433c-d0e8-4bb0-ac80-1001a2fc3b04">
+
+### Steps to run floorplan using OpenLANE
+```less README.md``` 
+
+<img width="445" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/058b0ac3-e49c-4156-85ed-c4ed25e16294">
+
+<img width="602" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/6b57fa7b-2e10-4e81-a789-da194f097950">
+
+```less floorplan.tcl```
+<img width="335" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/720fd7a2-2c16-4c3e-a465-c8c444dab7ba">
+
+
+
+
+
+
+
+
 
 
 
