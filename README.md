@@ -160,9 +160,13 @@ This Application Software enters into a block called as System Software and this
 ### Design preparation steps
 
 ```
+docker
 ./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
 run_synthesis
 run_floorplan
+
 ```
 
 <img width="342" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7753c73b-e9c1-4006-8a43-1480eca4107d">
@@ -334,12 +338,14 @@ run_floorplan
 - Clock 1 and clock 2 drive the complete chip.
 
 **Pin Placement**
+
 <img width="520" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/16360952-d320-4093-a941-8530898cf0d4">
 
 - After Pin placement we make sure that none of the automated placement and routine tool doesnt place any cells in the particular area that the gaps between each clock ports,the area should be blocked for placement and routine tool,hence we do logical cell placement blockage.
 <img width="508" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/e5af433c-d0e8-4bb0-ac80-1001a2fc3b04">
 
 ### Steps to run floorplan using OpenLANE
+
 ```less README.md``` 
 
 <img width="445" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/058b0ac3-e49c-4156-85ed-c4ed25e16294">
@@ -347,14 +353,26 @@ run_floorplan
 <img width="602" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/6b57fa7b-2e10-4e81-a789-da194f097950">
 
 ```less floorplan.tcl```
+
 <img width="335" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/720fd7a2-2c16-4c3e-a465-c8c444dab7ba">
 
+``` run_floorplan```
 
+<img width="603" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/2625fa1d-1a38-4032-aaf0-0fd8fc65e88d">
 
+### Review floorplan layout in Magic
 
+```
+magic -T /home/nickson/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged. lef def read picorv32a.floorplan.def & 
+```
 
+<img width="926" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/0f85eb87-7e1f-4001-8c04-840ab4209ca2">
 
+<img width="722" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/f645881b-bbdb-4204-8a9e-311185d70a1b">
 
+- Select **S** to select the layout press **V** that will fit layout on the screen 
+
+<img width="390" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/f70e2a0a-dcaf-4ef7-9fe5-9c27fc238960">
 
 
 
