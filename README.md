@@ -214,36 +214,124 @@ This Application Software enters into a block called as System Software and this
 <img width="601" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/4de900cb-ecf8-4431-b775-78921198feac">
 
 
-
-
-
-
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
 <details>
 <summary>  Chip Floor planning considerations </summary> 
+
+### Utilisation Factor and aspect ratio
+
+**How do we find W and H ??**
+
+<img width="416" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/88e3af4a-aa59-4e7d-811f-6188bae9a3a6">
+
+**Lets take an example**
+- we begin with a simple netlist takiing two D flip flips,aka launch flop and the capture flop with a simple combinational logic between them.
+
+<img width="448" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/092f2da8-868b-4b05-802c-c729f6504d63">
+
+-  convert it into physical dimension.
+<img width="417" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/d1954fa7-ca86-4012-b785-d9daf431da7c">
+
+- give some unit area for the each logic gate as shown below:
+<img width="579" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/bf87bf69-f41c-4d86-8022-9e2555b72e96">
+
+
+- we implment this die multiple times on the silicon wafer to increase the throughput.
+- when we implment the logic into the core,the logic cells occupied 100% of the core,thereby occupying Utilising 100% of the core.
+
+<img width="582" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/658e9ab3-8fe3-450d-8558-70882c27fe71">
+
+- To find Utilisation factor :
+<img width="248" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/66c9259d-b660-4408-bcf0-96e1eb7c1d14">
+
+- Here in our example *Utilisation factor* is 1
+
+- Aspect ratio :
+  - aspect ratio refers to the ratio of the width to the height of a transistor. It is a critical parameter in the design and fabrication of integrated circuits.
+- Here in our example aspect ratio is
+<img width="247" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/e8805a35-eeab-4d2a-9f48-665bad085a51">
+
+- Whenever the aspect ratio is 1 it signifies that the chip is a square shaped chip.when the aspect ratio is other than 1 then it signifies that our chip is rectangle in shape.
+
+
+### Concept of Pre placed cells
+
+<img width="547" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/afe3334d-9e9d-4da0-9d79-a1d25c2c9a71">
+
+<img width="269" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/d4253952-e03f-492a-ab42-e8287c4042dc">
+
+- separate the two blocks as two different IP's and modules.
+- we can implment this one time and can be REUSED multiple times.
+
+
+<img width="455" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/065fc0b8-5d35-4991-a728-c03119f80bcd">
+
+<img width="458" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/c54354a9-ce00-46fe-a42a-06faace90217">
+
+### De-coupling capacitors
+
+- Decoupling capacitors are a fundamental tool in ensuring the reliable and noise-free operation of digital circuits and ICs. Properly selected and placed decoupling capacitors can help prevent signal integrity issues, reduce electromagnetic interference (EMI), and improve the overall performance and reliability of electronic systems.
+
+<img width="577" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/b2a968d9-b686-4b3a-8cc1-46e24a69d4fe">
+
+- If Vdd' goes below the noise margin, due to Rdd and Ldd, the logic '1' at the output of circuit wont be detected as logic '1' at the input of the circuit following this circuit.
+<img width="462" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/87f2781e-2052-4a53-b557-ede8d9032e33">
+
+- Having a large distance from the power supply and the main circuit has a disadvantage as there are multiple voltage drops happening before it reaches the main circuit giving a less voltage at the main circuit due to voltage drops therefore we cannot gaurantee that our logic gates in the circuit are getting either a high voltage(logic 1) or a low voltage(logic 0) or a danger region or gray region(Either Logic can go to 1 or 0 giving high or low volts) hence we have a disadvantage of Voltage being far from our circuit design.
+
+- To solve this we use Decoupling Capacitors
+  - they are huge capacitors completely filled with charge,therefore if our main voltage is source is 1v our deocupling capacitors also get charged to 1V.
+
+<img width="579" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/1c574b07-a6b5-452a-bce9-6921a89db806">
+
+- surround the preplaced cells with the decoupling capacitors in order to keep the current flow as required without any problems of voltage drops.thereby ensuring each preplaced cells are getting the supply from the Decoupling capacitors.
+
+<img width="415" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/c2bee96c-6677-4295-913a-1d2ba3b720fa">
+
+### Power planning
+
+- Power planning involves the careful management of power distribution, delivery, and consumption in an IC to ensure its proper functioning and efficiency.
+
+<img width="322" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/8e51df59-d182-46ef-96b3-a230f46be2ab">
+
+- Consider the above circuit which we used for decoupling capacitors and convert it into a Macro,now this Macro is repeated multiple times on the chip creating a current Demand for each and every element of the particular macro.Now suppose one is driver and other is loader each macro have a decoupling capacitors and we need to send signal from driver to load, we need to make sure the particular line between the driver to load maintains the same particular signal.
+
+<img width="432" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/5749c54e-6071-46a7-b5f0-881e67c62d1b">
+
+- The line between the driver and load should get the necessary power from the power supply as decoupling capacitors cannot be placed in between therfore having a possibility of voltage drop as the power supply is far from the signal line.
+- Hence we consider a 16 bit bus connected to an inverter when we pass the logic to the inverter the output will be inverted value of the input therfore all the capacitors charged to logic 1 are now dischraged to Logic 0 and vise versa.
+
+<img width="453" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7ab5589a-5f16-4b9d-9d2c-bf5a26820f51">
+
+<img width="437" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/a137db98-0906-43ff-9eb4-86599a10993a">
+
+- when all the other capacitors charging from Logic 0 to logic 1 in that case all these capacitors are demanding for supply from the main power supply at the same time and we have a single voltage line for all the capacitors hence we get a Voltage Droop
+
+<img width="440" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/e6da813d-05d5-49f1-959d-72274e1e4410">
+
+- We put multiple power supplies instead of single one by creating multiple vdd and vss lines,therby giving any power supply demand to the circuit.
+**The power planning structure**
+
+### Pin placement and logical cell placement blockage
+
+- Pin placement, also known as I/O (Input/Output) pad placement, refers to the process of determining the locations and arrangement of input and output pins on an IC or PCB. These pins are used to interface with external devices or other components.
+<img width="443" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/bb5f3c42-4a93-4410-9d14-c88622057eeb">
+
+- lets take 2 more designs but both are driven using different clocks with a common pre placed cell as shown below:
+
+<img width="465" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/932631eb-512c-416a-828a-6246dcfffd82">
+
+<img width="471" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/08172ee4-f587-43b3-aa68-f303b8875487">
+
+
+
+
+
+
+
 
 
 </details>
