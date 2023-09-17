@@ -375,35 +375,76 @@ magic -T /home/nickson/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 <img width="390" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/f70e2a0a-dcaf-4ef7-9fe5-9c27fc238960">
 
 
-
-
-
-
-
-
-
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <details>
 <summary>   Library Binding and Placement </summary> 
+
+
+### Netlist binding and initial place design
+
+**Placement and Routing**
+
+- The most important step in placement and routing is to bind the netlist with the physical cells
+
+
+<img width="583" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/981d964b-437e-4414-a9a0-7b511d25b8a8">
+
+
+- The library also holds the information of each logic gate like delays and etc,the library can be classified into either 2 types one that holds the shapes and one that holds the information of each logic gate.
+The library will have the information of the shape the width and height,the delay information of each and every cell and the required condition of the particular cells.
+
+<img width="595" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/53b5f1a0-e847-4406-a551-605a94378d73">
+
+- we now place each of the shape cells from the physical deisgn view of logic gates in a proper manner such that ther are no delay contraints,we place them in such a way that they are close to thier respective input and ouput port pins, we place them close because if FF2 was placed somewhere below and the distance from FF2 to dout1 wud be higher therby having more timing delay to communicate with the output pin.
+
+<img width="595" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/02c35d41-c8f6-472e-b362-41198d1ab87a">
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
