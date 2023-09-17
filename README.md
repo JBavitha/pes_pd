@@ -159,6 +159,11 @@ This Application Software enters into a block called as System Software and this
 
 ### Design preparation steps
 
+```
+./flow.tcl -interactive
+run_synthesis
+run_floorplan
+```
 
 <img width="342" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7753c73b-e9c1-4006-8a43-1480eca4107d">
 
