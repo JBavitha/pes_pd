@@ -402,94 +402,92 @@ The library will have the information of the shape the width and height,the dela
 <img width="595" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/02c35d41-c8f6-472e-b362-41198d1ab87a">
 
 
+### Optimize placement using estimated wire-length and capacitance
+
+**To solve the problem**
+
+<img width="596" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/573d12bd-34e5-445b-b4ca-568bde354794">
+
+- we fix this problem by placing a Repeater in between Din2 and FF1 of 2nd stage to pass on the signal thereby reducing delay and buy having loss of data,therfore whatever is told to Din2 is succesfully retained by FF1 of 2nd stage and This is called Signal Integrity.
+
+- **Repeaters** are basically buffer that will recondition the original signal make a new signal replicates original signal and send it again in this way signal integrity is maintained.
+- In the 1st stage we dont need any repeaters, Signal Integrity is based on the wire length estimation and calculation.
+- SLEW is basically depended upon the value of the capacitor,higher the value of capacitor the amount of charge required to charge the capacitor will be high resulting in BAD slew.
+- In stage 2 we see that the distance was far from Din2 and FF1 of stage 2,slew is basically transmission and it goes beyond the limit in the 2nd stage and resulting it in more difficulty in reaching the FF1,therfore we add some repeaters to it as shown below:
+
+<img width="594" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/6f781280-db82-4f69-b248-2498b13c0885">
+
+- The stage 3 is placed as shown below:
+<img width="597" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/e16fef7d-56d4-4c1f-98ed-f4374029f91c">
+
+- The stage 4 is placed as shown below:
+<img width="594" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/66dabec4-5ab8-4cbb-b790-66e6f926e7b5">
+
+### Need for libraries and characterization
+
+Typical IC design flow that every design needs to go through if it wants to be implemented on a chip are:
+
+- 1st step is the Logic synthesis,output of logic synthesis is arrangment of gates in thier original functionality that we have described using RTL.
+- 2nd step is the Floorplanning,in this step we import the Netlist that we get out of logic synthesis and decide the size of the core and die.
+- 3rd step is the Placement step we take the logic cells present from the logic synthesis and place it on the chip in such a manner that the initial timing is met.(ie we place the fast ones together and the ones with different functionality we keep them depending on that).
+- 4th step is the CTS(Clock tree Synthesis), if we want the clock to be spread across the logic cells at equal time (ie: all flip flops sitting far or close apart should recieve clock at the same time) therfore in CTS we attack a tree which controls the clock for each logic cells.
+- 5th step is the Routing stage , if we want to route each cells there are certain flow routing has to go through and it is depended on the characteristics of the cell.
+- 6th step is the STA(static timing analysis) we do static timing analysis to find out what the setup time, hold time,maximum achivable frequency of circuit.
+
+<img width="318" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/a35bb65e-2c28-4710-bdcf-6292c934495a">
 
 
+From all these steps we see that there is one thing common and that is the Gates oR cells ,this is where Library characterization plays and imporatant role,the collection of these cells is known as library when placed in some area. we introduce these gates in a manner such that the tools understand what these gates are, we need to model them in a way that the EDA tools can understand it.
 
-  
+### Congestion aware placement using RePlAce
 
+```run_placement```
 
+<img width="591" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/dd1e9bb0-6ffa-406e-a9bd-b70f96269768">
 
+<img width="599" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/507d9e1c-aa7c-4f29-bf2d-3932574245c1">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="579" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/f567f29a-9e3e-4819-a876-ed1ab412e3ba">
 
 </details>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <details>
 <summary>  Cell design and characterization flows </summary> 
+
+
+### Inputs for cell design flow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
