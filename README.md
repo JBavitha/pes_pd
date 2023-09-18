@@ -681,25 +681,85 @@ run_synthesis
 Here's an introduction to delay tables:
 
 - Purpose of Delay Tables:
-  - Delay tables are used to represent the delays encountered by signals as they pass through various components of a digital circuit. The primary purposes of delay tables are as follows:
+  - Delay tables are used to represent the delays encountered by signals as they pass through various components of a digital circuit.
+- The primary purposes of delay tables are as follows:
+  - Timing Analysis: They are essential for performing timing analysis, ensuring that signals meet their timing constraints, and identifying potential violations.
 
-- Timing Analysis: They are essential for performing timing analysis, ensuring that signals meet their timing constraints, and identifying potential violations.
+  - Synchronization: They help in synchronizing different parts of a digital system to ensure that data is sampled or latched correctly.
 
-- Synchronization: They help in synchronizing different parts of a digital system to ensure that data is sampled or latched correctly.
+  - Power Estimation: Delay tables are used for estimating power consumption in digital circuits since power dissipation is directly related to signal transitions.
 
-- Power Estimation: Delay tables are used for estimating power consumption in digital circuits since power dissipation is directly related to signal transitions.
-
-Components of Delay Tables:
+- Components of Delay Tables:
 Delay tables typically include the following components:
 
-Input Conditions: These conditions specify the input signal values or transitions that trigger the delay calculation. Inputs can include input signal values, load conditions, and transition times.
+- Input Conditions: These conditions specify the input signal values or transitions that trigger the delay calculation. Inputs can include input signal values, load conditions, and transition times.
 
-Gate Delays: Delay tables include information about the propagation delays of various logic gates, such as AND, OR, NAND, NOR, XOR, and others. These delays depend on the gate's technology, fan-out, and input conditions.
+- Gate Delays: Delay tables include information about the propagation delays of various logic gates, such as AND, OR, NAND, NOR, XOR, and others. These delays depend on the gate's technology, fan-out, and input conditions.
 
-Interconnect Delays: They account for the delays introduced by the wires and routing between logic gates. Interconnect delays depend on the physical characteristics of the wires, including length, resistance, and capacitance.
+- Interconnect Delays: They account for the delays introduced by the wires and routing between logic gates. Interconnect delays depend on the physical characteristics of the wires, including length, resistance, and capacitance.
 
-Output Loads: The output load conditions specify the capacitive load that the gate must drive, which affects the output delay.
+- Output Loads: The output load conditions specify the capacitive load that the gate must drive, which affects the output delay.
 
+
+### Lab steps to configure synthesis settings to fix slack and include vsdinv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Timing analysis with ideal clocks using openSTA
+
+
+Setup timing analysis and introduction to flip-flop setup time
+
+- Setup Timing Analysis:
+  - Setup timing analysis is a critical aspect of digital circuit design and verification. It focuses on ensuring that data signals meet the required setup time constraints at the inputs of sequential elements (e.g., flip-flops) in a digital system. The primary goal of setup timing analysis is to ensure that data is stable and valid before it is clocked into a flip-flop or other storage elements.
+
+- Introduction to Flip-Flop Setup Time:
+  - The setup time (Ts) for a flip-flop is a critical parameter that determines when a data input signal must be stable before the arrival of the clock edge to guarantee proper data capture. It is defined as the minimum amount of time the data input must be held at a valid logic level before the active clock edge (e.g., rising edge) for reliable storage.
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/963ad38a-b8d9-481c-92e9-ff2ff64e4f2d)
+
+
+**Introduction to clock jitter and uncertainty**
+
+- Clock Jitter:
+  - Clock jitter refers to the short-term variations or fluctuations in the timing of a clock signal's edges. It is a critical parameter in digital systems and communication systems, as it can affect the overall system's performance, especially in high-speed or sensitive applications. Clock jitter can be caused by various factors and can manifest as random or deterministic variations in the clock signal's timing.
+
+- Clock Uncertainty:
+  - Clock uncertainty, also known as clock skew, is related to the variation in the arrival times of clock signals at different points within a digital system. It is distinct from clock jitter but can also impact system performance and timing. Clock uncertainty can arise due to factors such as clock distribution network delays, routing delays, and variations in clock path lengths.
+
+Clock Tree Synthesis
+
+After all the above steps of fixing slack violations. A a mapped.v file is generated in synthesis results. Therefore we write this netlist using write_verilog and replace the openlane generated mapped file ie., picorv32a.synthesis.v
+
+- now in the openlane flow, continue with
+
+'''
+run_flooorplan 
+run_placement 
+run_cts
+
+'''
 
 
 
