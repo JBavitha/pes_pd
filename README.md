@@ -534,3 +534,119 @@ Fall transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
 ![image](https://github.com/ani171/pes_pd/assets/97838595/cb5f8e16-e0f0-476a-a6c6-f20e5094b87f)
 
 </details>
+
+
+# Day 3 - Design library cell using Magic Layout and ngspice characterization
+
+<details>
+<summary>Labs for CMOS inverter ngspice simulations</summary>
+
+- The IO Placer revision process in Place and Route (PnR) is an iterative workflow, allowing for adjustments to environment variables as needed. One example is the flexibility to modify the pin configuration within the core area, transitioning from an initially evenly distributed placement to an alternative arrangement when necessary.
+![image](https://github.com/ani171/pes_pd/assets/97838595/80426bdf-8c04-4fe3-b43e-93bdabbeab56)
+- Here in the above image we see that all the I/O pins are located at output equidistant of each other.
+- to view the floorplan mode we can go to `floorplan.tcl`
+![image](https://github.com/ani171/pes_pd/assets/97838595/9465ae6a-b61f-489a-b72f-ca078c7e2cf7)
+
+- After making modifications to the run floorplan by changing the mode to 2, the resulting layout features a structure in which the I/O pins are positioned in a stacked configuration, meaning they are arranged vertically, with one pin directly above another. This stacking arrangement can be useful for optimizing space utilization and improving signal routing efficiency in the design.
+
+![image](https://github.com/ani171/pes_pd/assets/97838595/0e024cb4-1a88-4ae1-a83d-f86f987b9e79)
+
+### Lab steps to git clone vsdstdcelldesign
+
+- During this lab session, our task involves utilizing Git to clone document files associated with PMOS and NMOS spice models. Subsequently, upon performing the Git clone operation, a VSD standard cell design file will be generated within OpenLane.
+- Cloning repository
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+```
+<img width="597" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/759da788-9961-4ce2-bf95-2207413911f7">
+- To obtain the layout
+```
+magic -T sky130A.tech
+magic -T sky130A.tech sky130_inv.mag &
+```
+<img width="847" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/dc37cc29-3a6d-4a25-96d7-e1fd18788faa">
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Day 4 : Pre-layout timing analysis and importance of good clock tree
+
+<details>
+<summary>Timing modelling using delay tables</summary>
+
+### Lab steps to convert grid info to track info
+
+- Guidelines to follow while making standard cell set
+  - input and output port must lie on the intersection of the vertical and horizontal tracks
+  - the width of the standard cell should be odd multiple of the track pitch and height should be odd multiple of vertical pitch
+ 
+- Tracks are used during routing stage 
+
+<img width="564" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/7c98d580-457a-43cb-8de0-2787af698303">
+
+
+<img width="89" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/01767b64-7258-454b-a92b-87c988eee5ec">
+
+- press g : grids get activated
+
+<img width="488" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/5c74e8df-e186-433b-a91a-2fef695e6b37">
+
+<img width="582" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/889f335e-cf68-42a4-af67-2a6eb811f5cb">
+
+###  Lab steps to convert magic layout to std cell LEF
+
+- To generate the cell LEF file from Magic first we save the modified layout and then we open the file and extract LEF we type the command in the tkcon window
+
+```
+save sky130_vsdinv.mag
+```
+```
+magic -T sky130A.tech sky130_vsdinv.mag
+lef write
+```
+- width of the standard cell should be in the odd multiple of X pitch
+
+<img width="801" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/c95e5203-8da0-4a62-9570-078b60d9f46e">
+
+<img width="185" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/399865b1-665f-40e4-8007-4f2022481825">
+
+### Introduction to timing libs and steps to include new cell in synthesis
+
+- We copy the lef file created and the sky130 library that to the src folder of picorv32a folder.
+
+<img width="656" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/b465765d-d484-4974-a54e-c76daabf344d">
+
+<img width="559" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/ecad975d-8acc-4f96-bee0-f385f183d389">
+
+
+
+
+
+
+
+
