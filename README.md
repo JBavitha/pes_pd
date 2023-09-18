@@ -643,7 +643,62 @@ lef write
 
 <img width="559" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/ecad975d-8acc-4f96-bee0-f385f183d389">
 
+<img width="917" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/2745620d-21da-4d94-a506-ad3c6933d993">
 
+<img width="447" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/ae4e3e20-b0e1-4272-af4d-818f72614bcb">
+
+Modify config file to include the libraries and lef file
+
+```
+vim config.tcl
+```
+<img width="517" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/2b5d51fe-600e-4338-8f03-407aebcbef1f">
+
+- Next in OpenLANE we retrieve the 0.9 package.
+
+We type the following commands
+
+```
+docker
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a -tag 17-09_18-21 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+
+```
+
+<img width="588" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/3f29e768-75e2-4efb-8fc8-68ee27233592">
+
+
+
+
+
+### Introduction to delay tables
+
+- Delay tables, also known as delay models or delay tables, are essential components in digital circuit design and analysis. They provide a way to model and understand the propagation delays of logic gates and interconnects within a digital integrated circuit (IC). These tables play a crucial role in ensuring that the circuit meets its timing requirements, such as setup and hold times, and they are fundamental to the design of synchronous digital systems.
+Here's an introduction to delay tables:
+
+- Purpose of Delay Tables:
+  - Delay tables are used to represent the delays encountered by signals as they pass through various components of a digital circuit. The primary purposes of delay tables are as follows:
+
+- Timing Analysis: They are essential for performing timing analysis, ensuring that signals meet their timing constraints, and identifying potential violations.
+
+- Synchronization: They help in synchronizing different parts of a digital system to ensure that data is sampled or latched correctly.
+
+- Power Estimation: Delay tables are used for estimating power consumption in digital circuits since power dissipation is directly related to signal transitions.
+
+Components of Delay Tables:
+Delay tables typically include the following components:
+
+Input Conditions: These conditions specify the input signal values or transitions that trigger the delay calculation. Inputs can include input signal values, load conditions, and transition times.
+
+Gate Delays: Delay tables include information about the propagation delays of various logic gates, such as AND, OR, NAND, NOR, XOR, and others. These delays depend on the gate's technology, fan-out, and input conditions.
+
+Interconnect Delays: They account for the delays introduced by the wires and routing between logic gates. Interconnect delays depend on the physical characteristics of the wires, including length, resistance, and capacitance.
+
+Output Loads: The output load conditions specify the capacitive load that the gate must drive, which affects the output delay.
 
 
 
