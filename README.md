@@ -572,6 +572,8 @@ git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 ```
 <img width="597" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/759da788-9961-4ce2-bf95-2207413911f7">
 
+</details>
+
 <details>
 
 <summary>Inception of Layout</summary>
@@ -595,7 +597,9 @@ magic -T sky130A.tech sky130_inv.mag &
 
 </details>
 
+<details>
 
+<summary>Sky130 Tech File Labs</summary>
 
 #### Lab steps to create std cell layout and extract spice netlist
 
