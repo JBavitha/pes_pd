@@ -4,6 +4,18 @@
 <summary> How to talk to computers </summary>
 
 <details>
+
+<summary>Introduction to QFN-48 Package, Chip, Pads, Core, Die and IPs</summary>
+
+![WhatsApp Image 2023-09-19 at 11 50 43 AM](https://github.com/JBavitha/pes_pd/assets/142578450/00076ded-c322-49cf-a4c3-1043ccae2c57)
+
+
+  
+</details>
+
+
+
+<details>
 <summary> RISC-V(Reduced Instruction Set Computing-Five) </summary>
 
 - Open Standard: RISC-V is an open standard ISA, which means that its specifications are freely available to the public. This openness encourages collaboration, innovation, and the development of a wide range of processors by various organizations and individuals.
