@@ -571,6 +571,11 @@ Fall transition time = time(slew_high_fall_thr) - time (slew_low_fall_thr)
 git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 ```
 <img width="597" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/759da788-9961-4ce2-bf95-2207413911f7">
+
+<details>
+
+<summary>Inception of Layout</summary>
+
 - To obtain the layout
 
 ```
@@ -587,6 +592,10 @@ magic -T sky130A.tech sky130_inv.mag &
 <img width="461" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/80546af2-a874-4689-a782-23c3e690300b">
 
 <img width="609" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/32d91cd2-f1f4-4d9b-aefc-365a3d47dfc5">
+
+</details>
+
+
 
 #### Lab steps to create std cell layout and extract spice netlist
 
