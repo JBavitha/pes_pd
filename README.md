@@ -794,35 +794,13 @@ Delay tables typically include the following components:
 - Output Loads: The output load conditions specify the capacitive load that the gate must drive, which affects the output delay.
 
 
-### Lab steps to configure synthesis settings to fix slack and include vsdinv
+</details>
+
+<details>
+<summary>Timing analysis with ideal clocks using openSTA</summary>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Timing analysis with ideal clocks using openSTA
-
-
-Setup timing analysis and introduction to flip-flop setup time
+**Setup timing analysis and introduction to flip-flop setup time**
 
 - Setup Timing Analysis:
   - Setup timing analysis is a critical aspect of digital circuit design and verification. It focuses on ensuring that data signals meet the required setup time constraints at the inputs of sequential elements (e.g., flip-flops) in a digital system. The primary goal of setup timing analysis is to ensure that data is stable and valid before it is clocked into a flip-flop or other storage elements.
@@ -840,22 +818,30 @@ Setup timing analysis and introduction to flip-flop setup time
 
 - Clock Uncertainty:
   - Clock uncertainty, also known as clock skew, is related to the variation in the arrival times of clock signals at different points within a digital system. It is distinct from clock jitter but can also impact system performance and timing. Clock uncertainty can arise due to factors such as clock distribution network delays, routing delays, and variations in clock path lengths.
+</details>
 
-Clock Tree Synthesis
+<details>
 
-After all the above steps of fixing slack violations. A a mapped.v file is generated in synthesis results. Therefore we write this netlist using write_verilog and replace the openlane generated mapped file ie., picorv32a.synthesis.v
+<summary>Clock Tree Synthesis</summary>
+
+
+After  fixing slack violations. A a mapped.v file is generated in synthesis results. Therefore we write this netlist using write_verilog and replace the openlane generated mapped file ie., picorv32a.synthesis.v
 
 - now in the openlane flow, continue with
-
 
 '''
 run_flooorplan 
 run_placement 
 run_cts
+
 '''
 
+</details>
 
-### Timing Analysis with Real CLocks using OpenSTA
+<details>
+<summary>Timing Analysis with Real CLocks using OpenSTA</summary>
+
+
 
 ```
 read_lef /openLANE_flow/designs/picorv32a/runs/18-09_06-26/tmp/merged.lef
