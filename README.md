@@ -822,11 +822,11 @@ After all the above steps of fixing slack violations. A a mapped.v file is gener
 
 - now in the openlane flow, continue with
 
+
 '''
 run_flooorplan 
 run_placement 
 run_cts
-
 '''
 
 
@@ -855,6 +855,69 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 </details>
 
 # Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
+
+<details>
+<summary>Routing and design rule check (DRC)</summary>
+
+### Introduction to Maze routing
+  
+- Maze routing is a method used in electronic design automation (EDA) and integrated circuit (IC) design to determine efficient paths for interconnecting various components, such as logic gates, on a chip's layout. The goal is to find a path through a maze-like grid of obstacles while optimizing for factors like wire length, signal delay, and area utilization.
+
+- Lee's algorithm, also known as Lee's breadth-first search (BFS) algorithm, is a graph traversal and pathfinding algorithm that is commonly used in maze routing, maze solving, and other grid-based problems. Named after its creator, C. Y. Lee, the algorithm is particularly useful for finding the shortest path between two points in a grid while exploring the grid layer by layer.
+
+**DRC**
+
+- Lambda rules are process-specific design rules used in semiconductor manufacturing to ensure that integrated circuit (IC) layouts adhere to the capabilities and constraints of a particular semiconductor process. These rules are expressed in terms of lambda (λ), a normalized unit of measurement relative to the process technology. Lambda rules can vary between semiconductor foundries and process nodes, but they typically cover various aspects of IC design. Here's a list of common lambda rules and design considerations:
+
+  - Minimum Feature Size: Specifies the minimum allowed width and spacing for features such as transistors, metal tracks, and vias, often expressed as multiples of λ.
+  - Aspect Ratio: Defines the acceptable aspect ratio (width-to-height ratio) for rectangular structures, ensuring manufacturability.
+  - Metal Layer Constraints: Specifies minimum metal track widths, metal-to-metal spacings, and via sizes on metal layers.
+  - Poly Pitch: Defines the minimum pitch (spacing between features) for the poly-silicon (poly) layer, which affects the size of transistors and gates.
+  - Active Area Constraints: Specifies minimum active area dimensions, ensuring that transistors meet process requirements.
+  - Well and Substrate Taps: Covers the placement and size of well and substrate taps for connecting to power and ground planes.
+  - Gate Length: Specifies the minimum gate length for transistors, affecting their performance characteristics.
+  - Contact and Via Rules: Defines the minimum size and spacing of contacts and vias used to connect different layers in the IC.
+  - Local Interconnects: Provides rules for local interconnects, which are used for routing within a cell or macro.
+  - Minimum Metal to Active Spacing: Sets the minimum separation between metal tracks and active areas.
+  - Minimum Metal to Contact Spacing: Specifies the minimum distance between metal tracks and contacts.
+
+
+
+
+
+
+![VirtualBox_PES_physical_design_19_09_2023_10_02_37 (1)](https://github.com/JBavitha/pes_pd/assets/142578450/a9b12e4a-ffe0-4979-8891-a5107581e1a7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
