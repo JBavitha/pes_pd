@@ -560,11 +560,57 @@ git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 ```
 <img width="597" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/759da788-9961-4ce2-bf95-2207413911f7">
 - To obtain the layout
+
 ```
 magic -T sky130A.tech
 magic -T sky130A.tech sky130_inv.mag &
+
 ```
+
 <img width="847" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/dc37cc29-3a6d-4a25-96d7-e1fd18788faa">
+
+
+- Click on the component and type what in the tkcon window.
+
+<img width="461" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/80546af2-a874-4689-a782-23c3e690300b">
+
+<img width="609" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/32d91cd2-f1f4-4d9b-aefc-365a3d47dfc5">
+
+#### Lab steps to create std cell layout and extract spice netlist
+
+
+```
+pwd
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+
+````
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/0e56e930-28d6-46d4-9c19-32bed2fdff70)
+
+- Spice file
+
+<img width="453" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/b96497fb-79e8-4576-9e44-e6e92042b436">
+
+- ngspice sky130_inv.spice
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/a088aa79-4e8c-4994-b807-1120e3dfa882)
+
+- plot y vs time a
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/a87bd6fb-11b7-4dfa-99ab-622044d67438)
+
+
+
+
+
+
+
+
+
+
+
 
 
 </details>
