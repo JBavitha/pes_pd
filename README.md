@@ -905,10 +905,15 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ![image](https://github.com/JBavitha/pes_pd/assets/142578450/48d4681c-1765-4b5c-8bf5-1046fa272860)
 
 - Change in DEF
+
 ![image](https://github.com/JBavitha/pes_pd/assets/142578450/f8aa5da5-7215-4d34-bf21-bfb770c579ad)
 
 - Run routing
+
+
 ```run_routing```
+
+
 ![image](https://github.com/JBavitha/pes_pd/assets/142578450/a749e34e-1acf-4435-9add-b3136f71ab63)
 
 
