@@ -601,43 +601,65 @@ ext2spice
 
 ![image](https://github.com/JBavitha/pes_pd/assets/142578450/a87bd6fb-11b7-4dfa-99ab-622044d67438)
 
+- To download the required tech files
+
+```
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+```
+
+<img width="918" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/8e41dcdc-ebf0-456b-b334-231141b28dea">
+
+- Command to open magic
+```
+magic -d XR
+```
+<img width="492" alt="image" src="https://github.com/JBavitha/pes_pd/assets/142578450/a9e92a0b-24ce-4133-b45f-70d6f9ccea66">
+
+- Opening the met3.mag file
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/23a033e7-3eff-450e-9b44-9266890c4f20)
+
+- for contact cuts, using the command cif see VIA2, we get
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/fc7426a3-2061-4c2d-ac22-131453ec4cc1)
+
+**Fixing errors**
+
+- To find errors: Using the mouse select the area in b/w the ploy layers. Use the box command to get the measurement
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/979ebac1-a738-499c-b413-ea5419cffce0)
 
 
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/d198b119-5d8b-4736-b89c-212f00ba8a3d)
 
 
+- To fix the error open the sky130A.tech file using an editor and search for poly.9 and make the changes
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/96d801c0-e604-4d8d-bdd4-f11a501d2e44)
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/57154a76-9da6-49ca-812d-9d41c0f2dfb1)
 
 
+### Lab exercise to describe DRC error as a geometrical construct
 
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/330c88a8-f8c5-4c0b-ac0c-a7d594d07eb9)
 
+- Type in the following commands in the .main file
+
+```
+cif ostyle drc
+cif see dnwell_shrink
+cif see dnwell_missing
+```
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/93ef2bfd-8016-415a-9915-76a48cc9b6ba)
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/91c12f64-858f-41ed-96ec-c050f7322b50)
 
 
 
 
 </details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Day 4 : Pre-layout timing analysis and importance of good clock tree
@@ -806,6 +828,33 @@ run_placement
 run_cts
 
 '''
+
+
+### Timing Analysis with Real CLocks using OpenSTA
+
+```
+read_lef /openLANE_flow/designs/picorv32a/runs/18-09_06-26/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/18-09_06-26/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/18-09_06-26/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty -max $::env(LIB_SLOWEST)
+read_liberty -max $::env(LIB_FASTEST)
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+
+```
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/ffee24c6-1119-4530-8185-10703378338c)
+
+- Lab steps to Observe Setup and Hold Timing
+
+```report_clock_skew -hold```
+```report_clock_skew -setup```
+
+</details>
+
+# Day 5- Final steps for RTL2GDS using tritonRoute and openSTA
 
 
 
