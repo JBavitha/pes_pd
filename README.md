@@ -881,30 +881,48 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
   - Minimum Metal to Active Spacing: Sets the minimum separation between metal tracks and active areas.
   - Minimum Metal to Contact Spacing: Specifies the minimum distance between metal tracks and contacts.
 
-
-
-
-
-
-![VirtualBox_PES_physical_design_19_09_2023_10_02_37 (1)](https://github.com/JBavitha/pes_pd/assets/142578450/a9b12e4a-ffe0-4979-8891-a5107581e1a7)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </details>
 
+<details>
 
+<summary> Power Distribution Network and routing </summary>
+
+- After generating our clock tree network and verifying post routing STA checks we are ready to generate the power distribution network gen_pdn in OpenLANE:
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/f688bcb0-489c-45de-baef-328e5733920f)
+
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/48d4681c-1765-4b5c-8bf5-1046fa272860)
+
+- Change in DEF
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/f8aa5da5-7215-4d34-bf21-bfb770c579ad)
+
+- Run routing
+```run_routing```
+![image](https://github.com/JBavitha/pes_pd/assets/142578450/a749e34e-1acf-4435-9add-b3136f71ab63)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</details>
 
 
 
