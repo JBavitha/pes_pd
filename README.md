@@ -920,8 +920,16 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 
 
+**SPEF extraction**
 
+```
+cd Desktop/work/tools/SPEF_Extractor
+```
+- SPEF file is created in
 
+```
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/16-09_19-58/results/routing/
+```
 
 
 
