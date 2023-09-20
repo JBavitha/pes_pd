@@ -916,6 +916,13 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 
 ![image](https://github.com/JBavitha/pes_pd/assets/142578450/a749e34e-1acf-4435-9add-b3136f71ab63)
 
+- TritonRoute
+
+  - Inputs : .lef, .def, processed route guides
+  - Outputs : Detailed routing solution with optimised ire length and via count.
+  - Constraints : Route guides, connectivity constraints and design rules. image19
+  - Access Point : on-grid point on the metl layer of the route guide, and is used to connect to lower layer, upper layer segments, pins and ports.
+  - Access Point Cluster : A union of all APs derived from everything.
 
 
 
