@@ -955,7 +955,6 @@ cd Desktop/work/tools/SPEF_Extractor
   
 </details>
 
-![WhatsApp Image 2023-09-20 at 4 01 52 PM](https://github.com/JBavitha/pes_pd/assets/142578450/900e717f-9580-4515-813b-2d1887f2f200)
 
 
 
